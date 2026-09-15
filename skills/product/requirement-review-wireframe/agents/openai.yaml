@@ -1,0 +1,7 @@
+interface:
+  display_name: "需求评审标注线框图"
+  short_description: "生成 Figma 风格需求评审工作台，支持单页、多页目录和可隐藏注释"
+  default_prompt: "使用 $requirement-review-wireframe 为这个需求创建 Figma 风格评审工作台，保留产品界面，按实际页数组织页面目录与独立注释。"
+
+policy:
+  allow_implicit_invocation: true

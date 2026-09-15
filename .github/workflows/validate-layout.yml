@@ -1,0 +1,15 @@
+name: Validate skill layout
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  layout:
+    name: Check repository layout
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate categorized skills
+        run: python3 scripts/check_layout.py

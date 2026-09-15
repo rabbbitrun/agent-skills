@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{需求名称}} · 需求评审工作台</title>
+  <link rel="stylesheet" href="requirement-review.css">
+  <style>
+    body{margin:0}
+    /* Replace this sample with the product's own CSS. */
+    .sample-product{padding:32px;font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;color:#424b5b}
+    .sample-product h2{font-size:22px;margin:0 0 30px}.sample-control{max-width:340px}
+    .sample-control label{display:grid;gap:8px}.sample-control input{box-sizing:border-box;width:100%;padding:10px;border:1px solid #dce1e8;border-radius:4px;font:inherit}
+  </style>
+</head>
+<body>
+<div class="req-workspace">
+  <header class="req-workspace-header">
+    <button type="button" class="req-directory-toggle req-icon-button" data-directory-toggle aria-expanded="true" aria-controls="req-page-directory" aria-label="切换页面目录"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></svg></button>
+    <span class="req-workspace-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h9v9H5zM10 10h9v9h-9"/></svg></span>
+    <div class="req-project-title"><b>{{需求名称}}</b><span>需求评审 <i></i> <span data-page-total></span></span></div>
+    <div class="req-header-actions"><button type="button" class="req-review-button" data-requirement-toggle aria-expanded="true" aria-controls="req-review-panel">隐藏标注</button></div>
+  </header>
+  <div class="req-layout">
+    <aside class="req-page-directory" id="req-page-directory" aria-label="评审页面目录">
+      <div class="req-directory-head"><b>页面</b><span class="req-directory-total" data-page-total></span></div>
+      <label class="req-page-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input type="search" data-page-search aria-label="搜索页面或注释" placeholder="搜索页面或注释"></label>
+      <div class="req-search-result" aria-live="polite"></div><div class="req-directory-groups"></div>
+      <div class="req-directory-foot"><span>{{需求名称}}<span class="req-file-meta" data-project-summary></span></span></div>
+    </aside>
+    <main class="req-review-stage" aria-label="原型画布">
+      <div class="req-stage-toolbar"><span class="req-current-page-path" aria-live="polite"></span><div class="req-page-stepper"><button type="button" data-page-step="-1" aria-label="上一页">‹</button><span class="req-page-position"></span><button type="button" data-page-step="1" aria-label="下一页">›</button></div></div>
+      <div class="req-stage-viewport"><div class="req-artboard-label"><span>原型页面</span></div><div class="req-product-canvas" data-page-canvas></div>
+        <div class="req-canvas-help"><span class="req-annotation-help">点击编号，查看需求说明</span><span class="req-clean-label">干净产品视图 · 可随时显示标注</span></div>
+      </div>
+    </main>
+    <aside class="req-review-panel" id="req-review-panel" aria-label="需求评审标注">
+      <div class="req-inspector-heading"><span>注释</span></div>
+      <div class="req-inspector-intro"><div class="req-panel-heading"><h2>本页注释</h2><span class="req-count"></span></div><p class="req-panel-subtitle"></p></div>
+      <div class="req-note-scope" role="group" aria-label="注释范围"><button type="button" data-note-scope="page" aria-pressed="true">本页</button><button type="button" data-note-scope="all" aria-pressed="false">全部</button></div>
+      <div class="req-review-list"></div><p class="req-panel-foot"><span></span>评审色编号属于评审层，不是产品元素</p>
+    </aside>
+  </div>
+  <footer class="req-workspace-footer"><span><i></i>需求评审模式</span><span>页面目录 / 原型画布 / 需求注释</span></footer>
+</div>
+<!-- Add one template per product page. Keep business markup and styling here. -->
+<template id="page-main">
+  <section class="sample-product"><h2>{{页面名称}}</h2>
+    <div class="sample-control req-target" data-requirement="R1-01"><label>{{真实字段名称}}<input name="sample-name" autocomplete="off"></label><button type="button" class="req-pin" aria-label="查看 R1-01 标注">R1-01</button></div>
+  </section>
+</template>
+<script>
+  // Add pages using stable IDs and unique template IDs; counts are computed.
+  window.requirementPages=[{
+    id:'main', title:'{{页面名称}}', group:'{{模块名称}}', templateId:'page-main',
+    notes:[{id:'R1-01',type:'新增字段',title:'{{变更标题}}',body:'{{具体行为或规则}}'}]
+  }];
+</script>
+<script src="requirement-review.js"></script>
+<script src="requirement-workspace.js"></script>
+</body>
+</html>
