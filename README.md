@@ -28,6 +28,7 @@ skills/<分类>/<skill-name>/
 | Skill | 分类 | 用途 |
 | --- | --- | --- |
 | [requirement-review-wireframe](skills/product/requirement-review-wireframe/SKILL.md) | `product` | Figma 风格的需求标注工作台；支持单页、多页、超过 20 页的目录搜索，以及显示／隐藏标注 |
+| [product-design-workflow](skills/product/product-design-workflow/SKILL.md) | `product` | 团队需求设计与评审流程；按变更分流，衔接精简 PRD、灰度原型、结构确认与最终评审，支持进度恢复和局部变更 |
 
 ## 安装
 
