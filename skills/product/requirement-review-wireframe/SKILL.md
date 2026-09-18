@@ -3,7 +3,18 @@ name: requirement-review-wireframe
 description: Create or revise HTML requirement wireframes with a separate, traceable review annotation layer. Use for annotated prototypes, requirement review pages, PRD companion pages, or requests to keep annotations distinct from product UI, including “需求线框图”“需求注释”“需求标注”“原型评审页”. Supports single-page and multi-page review workspaces.
 ---
 
-# Requirement Review Wireframe
+# 需求评审标注线框图 · Requirement Review Wireframe
+
+为产品、设计和研发评审生成可在浏览器打开的 HTML 原型：产品界面放在画布中，需求说明放在独立标注区，通过稳定编号双向定位。支持单页、多页目录、搜索和隐藏／显示标注。
+
+- **适用场景**：需求线框图、带变更说明的原型、PRD 配套评审页，以及为已有 HTML 增加评审标注。
+- **需要提供**：需求规则、涉及的页面，以及可用的源码、截图或设计规范；已有需求编号和来源应一并提供。缺少资料时说明推断，不编造已确认规则。
+- **交付内容**：HTML 与引用的 CSS/JS；需要单文件时可内联资源。支持评审层交互，真实业务接口和保存功能需另行实现。
+- **使用边界**：“Figma 风格”指界面布局，不会创建 Figma 文件；不提供多人评论、账号或云端同步。切页保留当前输入不等于刷新后持久化。
+
+首次安装、使用指令、正式示例、依赖准备与更新说明见 [使用与维护指南](references/usage-and-maintenance.md)。可直接查看 [两页正式示例](assets/examples/service-settings.html)；它演示资源接入，不规定实际需求的页面或字段。
+
+以下规范用于生成和修改交付物。
 
 Create requirement prototypes using the approved **Figma-like review workspace**: a compact project bar, searchable page directory, neutral gray canvas with a white product artboard, and a separate annotation inspector. Preserve the product's existing UI inside the artboard.
 
@@ -99,6 +110,8 @@ Check at desktop width, 1100 px, and a phone width (for example 375 px):
 - Inspect the actual rendering for clipped pins, unreadable text, unwanted horizontal overflow, and accidental product-style changes. A screenshot alone does not verify interactions.
 
 When editing shared assets, run `node scripts/check-interactions.cjs` from the skill directory with Playwright and Chromium available (`NODE_PATH` may point to the environment's bundled packages). The suite covers the reusable shell at one, three, and 24 pages; separately validate the actual delivered product prototype.
+
+For dependency setup, the test coverage boundary, and checks after changing the published example, see [使用与维护指南](references/usage-and-maintenance.md#维护与验证).
 
 ## Assets
 

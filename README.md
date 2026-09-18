@@ -33,6 +33,22 @@ skills/<分类>/<skill-name>/
 
 将需要的整个 skill 目录复制到 Codex 的 skills 目录；不要复制上层分类目录。安装路径通常为 `~/.codex/skills/<skill-name>/`，设置了 `CODEX_HOME` 时使用 `$CODEX_HOME/skills/<skill-name>/`。更新前备份已有同名目录。
 
+## 快速开始：需求评审标注线框图
+
+安装 `requirement-review-wireframe` 后，将需求文档、现有页面源码或截图提供给 Codex，并输入：
+
+```text
+使用 $requirement-review-wireframe，为附件中的需求制作 HTML 评审原型。
+保留现有产品布局，按实际涉及的页面组织目录；给变更点添加独立编号标注，
+支持点击定位及隐藏／显示标注。交付 HTML 和完整资源，并说明已验证的交互。
+```
+
+预期得到可在浏览器打开的评审工作台；业务接口和数据保存不由这个 skill 自动提供。“Figma 风格”描述界面布局，交付格式为 HTML。
+
+![两页需求评审示例：左侧页面目录、中间产品画布、右侧需求标注](skills/product/requirement-review-wireframe/assets/examples/service-settings.png)
+
+查看 [使用与维护指南](skills/product/requirement-review-wireframe/references/usage-and-maintenance.md)，或下载仓库后在浏览器打开 [正式示例 HTML](skills/product/requirement-review-wireframe/assets/examples/service-settings.html)。GitHub 文件页用于查看源码，不直接运行原型。
+
 ## 后续更新
 
 1. 在 `skills/<分类>/<skill-name>/` 内新增或修改 skill；目录名与 `SKILL.md` 的 `name` 保持一致。
